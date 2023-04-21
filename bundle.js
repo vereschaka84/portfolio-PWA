@@ -1,0 +1,6 @@
+if ("serviceWorker" in navigator) { // дізнаємось, чи наш сайт підтримує serviceWorker
+	window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js")); // після того, як усі елементи браузеру завантажаться, ми реєструємо наш service worker
+}
+
+
+(() => { "use strict"; document.addEventListener("DOMContentLoaded", (() => { document.getElementById("button").onclick = () => { document.body.style.backgroundColor = "black", document.body.style.color = "black" }; let e = parseInt(localStorage.getItem("visitCount")) || 0, t = parseInt(localStorage.getItem("totalTime")) || 0; window.addEventListener("beforeunload", (function () { let o = parseInt(sessionStorage.getItem("startTime")) || 0, n = (new Date).getTime(); t += n - o, e++, localStorage.setItem("visitCount", e), localStorage.setItem("totalTime", t) })), sessionStorage.setItem("startTime", (new Date).getTime()), console.log(`Кількість візитів: ${e}`); let o = e > 0 ? Math.round(t / e / 1e3) : 0; console.log(`Середня тривалість візиту: ${o} сек`) })) })();
