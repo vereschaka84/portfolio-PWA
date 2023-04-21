@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Nanum+Pen+Script:regular);
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #03303B;
+  font-family: 'Nanum Pen Script';
+  font-size: 16px;
+  color: rgb(255, 247, 0);
+  line-height: 1.1;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  margin: 0 auto;
+  width: 960px;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+marquee {
+  color: aqua;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 5em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 2.5em;
+  color: white;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav-link {
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+}
+
+.nav-link:hover {
+  font-size: 2em;
+  color: rgb(221, 145, 14);
+}
+
+.first-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.first-screen_img-block,
+.first-screen_text-block {
+  text-align: center;
+}
+
+img.photo {
+  max-width: 600px;
+}
+
+img.photo:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-out;
+}
+
+
+footer {
+  background-color: rgb(81, 73, 73);
+  text-align: center;
+  font-size: 2em;
+}
+
+.divider {
+  background-image: url(img/noisy-texture.png);
+  background-repeat: repeat-x;
+  height: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider p {
+  color: #03303B;
+  font-size: 3em;
+}
+
+.second-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: rgb(67, 131, 191);
+}
+
+.my-works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items: center;
+  
+}
+
+.my-works .block:hover {
+transform: scale(0.99);
+filter: grayscale(1);
+transition: all 0.5s ease;
+}
+
+button {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #03303B;
+  outline: none;
+  color: azure;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .my-works {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .my-works {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .first-screen, .second-screen {
+    padding: 20px;
+  }
+
+  .divider {
+    text-align: center;
+    font-size: 0.7em;
+  }
+}
